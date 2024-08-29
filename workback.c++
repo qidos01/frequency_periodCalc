@@ -39,7 +39,7 @@ int main(){
     R = R - R1;
     cout << R<<endl;
     R2 = R/2;
-    cout << "R2 = "<< R2;
+    cout << "R2 = "<< R2 <<endl;
 
     DC = ((R1 + R2)/(R1 + 2*R2)*100);
     cout << "Duty cycle: "<< DC;

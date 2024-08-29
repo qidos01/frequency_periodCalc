@@ -21,12 +21,9 @@ double frequencyAndPeriod(double R1, double R2, double capacitor){
 }
 
 double capacitorandResistor(double R1, double capacitor){
-    double R1;
     double R2;
-    double capacitor;
     double T;
     double F;
-    double R;
     double DC;
     cout << "Enter frequency value: ";
     cin >> F;
@@ -35,15 +32,12 @@ double capacitorandResistor(double R1, double capacitor){
     cout<< "Enter Capacitor value: ";
     cin >> capacitor;
     T = 1/F;
-    R = T/(0.693*capacitor);
-    cout<< R<<endl;
-    R = R - R1;
-    cout << R<<endl;
-    R2 = R/2;
-    cout << "R2 = "<< R2 <<endl;
-
+    R2 = T/(0.693*capacitor);
+    R2 = R2 - R1;
+    R2 = R2/2;
+    cout << "R2 = "<< R2 <<"ohms"<<endl;
     DC = ((R1 + R2)/(R1 + 2*R2)*100);
-    cout << "Duty cycle: "<< DC;
+    cout << "Duty cycle: "<< DC << "%";
 
 
 }
@@ -62,7 +56,14 @@ int main(){
     cout << "What do you want to calculate for: ";
     cin >> choice;
 
+    if ((choice == "frequency") ||(choice == "period")){
     frequencyAndPeriod(R1, R2, capacitor);
+    }
+
+    else if (choice == "resistor"){
+    capacitorandResistor(R1, capacitor);   
+    }
+
     return 0;
 
     //to get either the resistor value or capacitor value
