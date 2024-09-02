@@ -12,18 +12,14 @@ double frequency(double R1, double R2, double capacitor){
     double result;
     T = 0.693*(R1+2*R2)*capacitor;
     F = 1/T;
-    cout << F <<endl;
-    result = T;
-    cout << result <<endl; 
+    result = F;
     return result;
-
 }
 
 double period(double F){
     double T;    
     double result;
     result = 1/F;
-    cout << result;
     return result;
 }
 
@@ -68,22 +64,18 @@ int main(){
     if (choice == "frequency"){
         cout << "Enter R1 value: ";
         cin >> R1;
-        cout <<R1;
         cout << "Enter R2 value: ";
         cin >> R2;
-        cout <<R2;
         cout<< "Enter Capacitor value: ";
         cin >> capacitor;
-        cout <<capacitor;
-        frequency(R1, R2, capacitor);
-        cout << frequency <<endl;
+        result = frequency(R1, R2, capacitor);
         cout <<"Frequency is: "<<result <<"hz" << endl;
     }
 
     else if(choice == "period"){
         cout << "enter Frequency value: ";
         cin>> F;
-        period(F);
+        result = period(F);
         cout << "Period is: " << result <<"secs";
     }
 
@@ -94,16 +86,16 @@ int main(){
         cin >> R1;
         cout<< "Enter Capacitor value: ";
         cin >> capacitor;
-        Resistor(R1, capacitor);
+        result = Resistor(R1, capacitor);
         cout << "R2 = "<< result <<"ohms"<<endl;
     }
 
-    else if (choice == "duty cycle"){
+    else if (choice == "dutycycle"){
         cout << "Enter R1 value: ";
         cin >> R1;
         cout << "Enter R2 value: ";
         cin >> R2;
-        dutyCycle(R1, R2);
+        result = dutyCycle(R1, R2);
         cout << "Duty cycle: "<< result << "%";
     }
     else{
